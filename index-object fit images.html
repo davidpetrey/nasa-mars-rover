@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+
+		.nasa img {
+			max-width:100%;
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+		}
+
+		li {
+			height: 40vh;
+			flex-grow: 1;
+		}
+
+		li:last-child {
+			flex-grow: 10;
+		}
+
+		img {
+			max-height: 100%;
+			min-width: 100%;
+			object-fit: cover;
+			vertical-align: bottom;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	
+<div class="container-fluid nasa p-5">
+	<h2><span id="roverName"></span> Rover</h2>
+	<h5>Camera: <span id="cameraName"></span></h5>
+	<!-- <div id="test" class="row d-flex flex-wrap"> </div> -->
+	<ul id="test" class=""> </ul>
+</div>
+
+
+
+
+
+<script src="/app.js" type="application/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script type="module">
+
+	</script>
+
+	<style>
+		.nasa {
+			border: 6px solid;
+		}
+
+		.nasa img {
+			max-width: 100%;
+			border: 1px solid black;
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+	<div class="container-fluid nasa p-5">
+
+
+
+
+		<form>
+
+			<div class="row mb-4">
+				<div class="col-3 mb-4">
+					<label for="inputRover" class="form-label">1. Rover:</label>
+					<select id="inputRover" class="form-select" aria-label="Default select example">
+						<option></option>
+						<option value="curiosity">Curiosity</option>
+						<option value="opportunity">Opportunity</option>
+						<option value="spirit">Spirit</option>
+					</select>
+					<div id="roverDescript" class="form-text">Choose a Mars Rover</div>
+				</div>
+
+				<div class="col-3">
+					<label for="inputSol" class="form-label">2. Solar day:</label>
+					<input id="inputSol" type="text" class="form-control" aria-describedby="solDescript" disabled>
+					<div id="solDescript" class="form-text"></div>
+				</div>
+
+				<div class="col-3">
+					<label for="inputCamera" class="form-label">3. Camera:</label>
+					<select id="inputCamera" class="form-select" disabled> </select>
+					<div id="cameraDescript" class="form-text">Available cameras from day chosen</div>
+				</div>
+
+				<div class="col-9 text-end">
+					<button id="getPhotos" type="button" class="btn btn-primary">Submit</button>
+				</div>
+
+			</div>
+		</form>
+
+
+
+
+		<h2><span id="roverName"></span> Rover</h2>
+		<h5>Camera: <span id="cameraName"></span></h5>
+		<div id="test" class="row d-flex flex-wrap"> </div>
+	</div>
+
+
+
+
+
+	<script src="app.js" type="module"></script>
+</body>
+
+</html>

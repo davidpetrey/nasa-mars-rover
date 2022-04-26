@@ -1,6 +1,3 @@
-import {marsRoverApiKey} from '../api-key.js';
-console.log(marsRoverApiKey);
-
 
 document.addEventListener('DOMContentLoaded', () => {
 /* https://api.nasa.gov/ */
@@ -13,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let getManifest = (rover) => {
 		$.ajax({
 			method: "GET",
-			url: `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${marsRoverApiKey}`,
+			url: `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=c9OyMPxnO1YTXXEecRMoGxlfNRRMHT412OFVjMyA`,
 		})
 		.done(function(data, textStatus, jqXHR) {
 			console.log(jqXHR.status, textStatus);
@@ -70,6 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	let solDescript = document.getElementById("solDescript");
 
 	selectRover.addEventListener('change', (e) => {
+
+		if (!e.target.value) {
+			console.log('not');
+			console.log(e.target.value);
+			selectSolarDay.value = '';
+			selectSolarDay.disabled = true;
+			selectCamera.value = '';
+			selectCamera.disabled = true;
+		}
 		if (e.target.value) {
 			selectedRover = e.target.value;
 			getManifest(selectedRover);
@@ -187,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.log(roverNameQsValue, solDayQSValue, cameraQsValue);
 
 		// let requestUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverNameQsValue}/photos?sol=${solDayQSValue}&page=1&api_key=${marsRoverApiKey}`;
-		let requestUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverNameQsValue}/photos?sol=${solDayQSValue}&page=1&camera=${cameraQsValue}&api_key=${marsRoverApiKey}`;
+		let requestUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverNameQsValue}/photos?sol=${solDayQSValue}&page=1&camera=${cameraQsValue}&api_key=c9OyMPxnO1YTXXEecRMoGxlfNRRMHT412OFVjMyA`;
 
 
 		$.ajax({
